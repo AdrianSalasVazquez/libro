@@ -13,6 +13,7 @@ public class Libro {
     private String autor;
     private String titulo;
     private int paginas;
+    private String numeroReferencia;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -22,6 +23,7 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
         paginas = paginasLibro;
+        numeroReferencia = "";
     }
     
     public String getAutor() {
@@ -32,8 +34,21 @@ public class Libro {
         return titulo;
     } 
     
+    public String getNumeroReferencia() {
+        return numeroReferencia;
+    }
+    
     public int getPaginas() {
         return paginas;
+    }
+    
+    public void setNumeroReferencia(String numeroRef) {
+        if (numeroRef.length() < 3){
+            System.out.println("Error: El número de referencia introducido es menor de 3 caracteres");
+        }
+        else {
+            numeroReferencia = numeroRef;
+        }
     }
     
     public void imprimeAutor (){
@@ -45,11 +60,21 @@ public class Libro {
     }
     
     public void imprimeDetalles() {
-        System.out.println("Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas);
+        if (numeroReferencia == ""){
+            System.out.println("Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Número de referencia: ZZZ");
+        }
+        else {
+            System.out.println("Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Número de referencia: " + numeroReferencia);
+        }
     }
     public String getDetalles() {
         String detalles;
-        detalles = ("Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas);
+        if (numeroReferencia == ""){
+            detalles = ("Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Número de referencia: ZZZ");
+        }
+        else {
+            detalles = ("Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Número de referencia: " + numeroReferencia);
+        }
         return detalles;
     }
 }
