@@ -77,34 +77,39 @@ public class Libro {
     
     public void imprimeDetalles() {
         String siONo;
+        String numRef;
+        if (numeroReferencia == ""){
+            numRef = "ZZZ";
+        }
+        else {
+            numRef = numeroReferencia;
+        }
         if (esLibroDeTexto == true){
             siONo = "Si";
         }
         else {
             siONo = "No";
         }
-        if (numeroReferencia == ""){
-            System.out.println("Es libro de texto?: " + siONo + " | Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Veces que ha sido prestado: " + vecesPrestado + " | Número de referencia: ZZZ");
+        System.out.println("Es libro de texto?: " + siONo + " | Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Veces que ha sido prestado: " + vecesPrestado + " | Número de referencia: " + numRef);
         }
-        else {
-            System.out.println("Es libro de texto?: " + siONo + " | Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Veces que ha sido prestado: " + vecesPrestado + " | Número de referencia: " + numeroReferencia);
-        }
-    }
+        
     public String getDetalles() {
         String detalles;
         String siONo;
+        String numRef;
+        if (numeroReferencia == ""){
+            numRef = "ZZZ";
+        }
+        else {
+            numRef = numeroReferencia;
+        }
         if (esLibroDeTexto == true){
             siONo = "Si";
         }
         else {
             siONo = "No";
         }
-        if (numeroReferencia == ""){
-            detalles = ("Es libro de texto?: " + siONo + " | Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Veces que ha sido prestado: " + vecesPrestado + " | Número de referencia: ZZZ");
-        }
-        else {
-            detalles = ("Es libro de texto?: " + siONo + " | Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Veces que ha sido prestado: " + vecesPrestado + " | Número de referencia: " + numeroReferencia);
-        }
+        detalles = ("Es libro de texto?: " + siONo + " | Autor del libro: " + autor + " | Título del libro: " + titulo + " | Número de páginas: " + paginas + " | Veces que ha sido prestado: " + vecesPrestado + " | Número de referencia: " + numRef);
         return detalles;
-    }
+        }
 }
